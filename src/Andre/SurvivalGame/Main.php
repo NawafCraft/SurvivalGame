@@ -137,11 +137,11 @@ class Main extends PluginBase implements Listener
 		$this->endTime=(int)$this->config->get("endTime");//????
 		$this->gameTime=(int)$this->config->get("gameTime");//????
 		$this->waitTime=(int)$this->config->get("waitTime");//????
-		$this->prefix=(int)$this->config->get("prefix");//????
-		$this->gameStatus=0;//???? 
-		$this->lastTime=0;//????
-		$this->players=array();//???????
-		$this->SetStatus=array();//????
+		$this->prefix=(int)$this->config->get("prefix");// config for prefix
+		$this->gameStatus=0;// steps game
+		$this->lastTime=0;// Last Time
+		$this->players=array();// array
+		$this->SetStatus=array();// array
 		$this->all=0;//??????
 		$this->config->save();
 		$pm = $this->getServer()->getPluginManager();
@@ -1198,6 +1198,7 @@ class Main extends PluginBase implements Listener
         	        $this->saveResource("points.yml");
         	        $this->saveResource("config.yml");
 			$this->getServer()->getLogger()->info(TextFormat::GREEN."[SG] Please wait...........");
+                        sleep(2);
 			$this->getServer()->getLogger()->info(TextFormat::GREEN."[SG] All Data/Settings has been fixed");
 	}
 }
